@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "template-postgres-python-project"
+version = "0.1.0"
+description = ""
+authors = ["Fabrizio Gambino <fabrizio.gambino@doktor.se>"]
+readme = "README.md"
+packages = [{include = "source"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+sqlalchemy = "^2.0.6"
+alembic = "^1.10.2"
+psycopg2 = "^2.9.5"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
