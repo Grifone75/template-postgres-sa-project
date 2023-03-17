@@ -7,16 +7,30 @@ it uses :
 - *sqlalchemy* as orm
 
 
-## set up database
 
+NB. When starting a new project, if no migrations exists, ensure that the folder alembic/versions exists.
+If not, alembic revision will fail (and the error message is not very clear about the folder missing)
+
+
+
+## set up database
 
     make setup
 
+## autogenerate migrations from models
 
+    poetry run alembic revision --autogenerate
 
+## check migration generation (dry-run) and potential issues
 
-## run migrations
+    poetry run alembic check
 
+## run migrations to db
 
     poetry run alembic upgrade head
+
+## downgrade db migrations fully
+
+    poetry run alembic downgrade base
+
 
